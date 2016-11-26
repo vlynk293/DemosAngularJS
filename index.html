@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+  </head>
+    <style>
+        .done{
+            text-decoration: line-through;
+        }
+    </style>
+  <body>
+     
+      
+      
+    <div ng-controller="myCtrl" ng-cloak>
+    <select ng-model="month" ng-options="m as m for m in getMonths()" ng-change="monthYearChange()">
+    </select>
+      <select ng-model="year"  ng-options="y as y for y in getYears()" ng-change="monthYearChange()">
+      </select>
+        {{month}} / {{year}}
+        
+        <div class="calendar">
+            <div class="day-title cell" ng-repeat="n in [0, 1, 2, 3, 4, 5, 6]">
+                 {{getNameOfDay(n)}}
+            </div>
+            <div class="day-container">
+                <div class="day cell" ng-repeat="day in dates" ng-class="{'current-month' : day.month ==month, 'weekend': day.isWeekEnd}">
+                    {{day.day}}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+      
+
+
+    <script src="bower_components/angular/angular.js"></script>    
+    <script src="js/app.js"></script>    
+    <script src="js/controllers/myController.js"></script>    
+    <script src="js/services/myService.js"></script>
+
+  </body>
+</html>

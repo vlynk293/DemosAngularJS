@@ -1,0 +1,44 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
+html,body{
+    width: 100%;
+}
+
+.calendar {
+    width: 100%;
+}
+
+.calendar .cell{
+    width: 14.2857%;
+    height: 80px;
+    border: 1px solid #ccc;    
+    float:left;
+    padding: 5px;
+    text-align: center
+}
+
+.calendar .day-title{
+    height: 30px;
+    background-color: beige
+}
+
+.day-container{
+    position: relative;
+    display: block;
+    width: 100%
+}
+
+.calendar .day{
+    height: 60px;
+}
+
+.current-month{
+    color: red;
+}
+
+.weekend{
+    background: #f7f7f7;
+}
